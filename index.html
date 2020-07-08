@@ -18,6 +18,7 @@
         </select>
     </form>
     <button id="submit" type="submit">확인</button>
+    <button id="rmcookie">쿠키 삭제</button>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> 
     <script>
         document.getElementById('submit').onclick = function() {
@@ -27,6 +28,9 @@
             alert("설문이 완료되었습니다. 감사합니다.");
 
             Cookies.set('done', 'yes', {expires: 7300});
+        }
+        document.getElementById('rmcookie').onclick = function() {
+            Cookies.remove('done');
         }
     </script>
 </body>
