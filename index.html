@@ -21,8 +21,8 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> 
     <script>
         document.getElementById('submit').onclick = function() {
-            if (document.getElementById('coding').value == "unselected") {alert("항목을 선택해주세요."); location.reload();}
-            if (Cookies.get('done') == 'yes') {alert("이미 설문에 응하셨습니다!"); location.reload();}
+            if (document.getElementById('coding').value == "unselected") {alert("항목을 선택해주세요."); return; location.reload();}
+            if (Cookies.get('done') == 'yes') {alert("이미 설문에 응하셨습니다!"); return; location.reload();}
             
             alert("설문이 완료되었습니다. 감사합니다.");
 
