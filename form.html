@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>코딩 설문조사</h1>
+    <h2>일주일에 코딩을 얼마나 많이 하십니까?</h2>
+    <form>
+        <select id="coding">
+            <option value="unselected">선택하기</option>
+            <option value="zero">안 함</option>
+            <option value="one">1일~2일</option>
+            <option value="three">3일~4일</option>
+            <option value="five">5일 이상</option>
+        </select>
+    </form>
+    <button id="submit" type="submit">확인</button>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script> 
+    <script>
+        document.getElementById('submit').onclick = function() {
+            if (document.getElementById('coding').value == "unselected") {alert("항목을 선택해주세요."); location.reload();}
+            if (Cookies.get('done') == 'yes') {alert("이미 설문에 응하셨습니다!"); location.reload();}
+            
+            alert("설문이 완료되었습니다. 감사합니다.");
+
+            Cookies.set('done', 'yes', {expires: 7300});
+        }
+    </script>
+</body>
+</html>
+
